@@ -11,6 +11,10 @@ builder.Services.AddApplicationServices();
 
 var host = builder.Build();
 
+// Inicializa as rotas padrão
+var rotasInicializador = host.Services.GetRequiredService<RotasInicializadorService>();
+rotasInicializador.InicializarRotasPadrao();
+
 // Execução do menu
 var menuService = host.Services.GetRequiredService<MenuService>();
 

@@ -120,3 +120,110 @@ dotnet test
 2. **Value Objects**: Implementação de Rota como Value Object para garantir imutabilidade e validações
 3. **Testes Unitários**: Cobertura abrangente com casos de teste para garantir robustez
 4. **Domínio Rico**: Encapsulamento de regras de negócio nas entidades e value objects
+
+# Rota de Viagem
+
+Sistema para encontrar a rota mais barata entre dois pontos, independente da quantidade de conexões.
+
+## Estrutura do Projeto
+
+```
+src/
+  ├── RotaViagem.Domain/        # Camada de domínio com entidades e regras de negócio
+  ├── RotaViagem.AppConsole/    # Aplicação console com interface de usuário
+tests/
+  ├── RotaViagem.Domain.Tests/  # Testes unitários do domínio
+  └── RotaViagem.App.Tests/     # Testes de integração da aplicação
+```
+
+## Pré-requisitos
+
+- .NET 8.0 SDK
+- Visual Studio 2022 ou VS Code
+
+## Como Executar
+
+1. Clone o repositório:
+```bash
+git clone [url-do-repositorio]
+cd [nome-do-repositorio]
+```
+
+2. Restaure os pacotes e compile o projeto:
+```bash
+dotnet restore
+dotnet build
+```
+
+3. Execute a aplicação:
+```bash
+cd src/RotaViagem.AppConsole
+dotnet run
+```
+
+## Funcionalidades
+
+O sistema possui duas funcionalidades principais:
+
+1. **Carregar Rotas**: 
+   - Permite carregar um arquivo com as rotas no formato `ORIGEM,DESTINO,VALOR`
+   - Exemplo de arquivo:
+   ```
+   GRU,BRC,10
+   BRC,SCL,5
+   GRU,CDG,75
+   ```
+
+2. **Consultar Melhor Rota**:
+   - Digite a rota no formato `ORIGEM-DESTINO`
+   - O sistema retornará a rota mais barata e seu custo total
+   - Exemplo:
+   ```
+   Digite a rota: GRU-CDG
+   Melhor Rota: GRU - BRC - SCL - ORL - CDG ao custo de $40
+   ```
+
+## Decisões de Design
+
+1. **Arquitetura em Camadas**:
+   - Domain: Contém as regras de negócio e entidades
+   - AppConsole: Interface com usuário e serviços
+
+2. **DDD (Domain-Driven Design)**:
+   - Entidades e Value Objects bem definidos
+   - Regras de negócio encapsuladas no domínio
+
+3. **Princípios SOLID**:
+   - Separação de responsabilidades
+   - Inversão de dependência com interfaces
+   - Classes coesas e focadas
+
+4. **Padrões Utilizados**:
+   - Command Pattern para opções do menu
+   - Repository Pattern para persistência
+   - Dependency Injection para acoplamento fraco
+
+5. **Testes**:
+   - Testes unitários para regras de domínio
+   - Testes de integração para fluxos completos
+   - Mocks para isolamento de dependências
+
+## Algoritmo de Busca
+
+- Implementação de busca em profundidade (DFS) com backtracking
+- Encontra todas as rotas possíveis e seleciona a mais barata
+- Evita ciclos usando conjunto de visitados
+- Complexidade O(V + E) onde V são vértices e E são arestas
+
+## Executando os Testes
+
+```bash
+dotnet test
+```
+
+## Limitações e Possíveis Melhorias
+
+1. Persistência em memória (pode ser expandido para banco de dados)
+2. Interface console (pode ser expandido para API ou UI)
+3. Validações adicionais de entrada
+4. Logging e tratamento de erros mais robusto

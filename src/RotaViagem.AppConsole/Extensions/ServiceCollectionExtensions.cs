@@ -13,6 +13,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddSingleton<Viagem>();
         services.AddSingleton<IConsoleService, ConsoleService>();
+        services.AddSingleton<RotasInicializadorService>();
 
         // Registra as opções tanto como interface quanto como implementação concreta
         services.AddSingleton<CarregarRotasOption>();
@@ -31,8 +32,7 @@ public static class ServiceCollectionExtensions
                 { "2", serviceProvider.GetRequiredService<ConsultarRotaOption>() },
                 { "3", serviceProvider.GetRequiredService<SairOption>() }
             };
-            var console = serviceProvider.GetRequiredService<IConsoleService>();
-            return new MenuService(options, console);
+            return new MenuService(options, serviceProvider.GetRequiredService<IConsoleService>());
         });
 
         return services;
