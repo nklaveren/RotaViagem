@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
+
 using RotaViagem.AppConsole.Services;
 using RotaViagem.Domain.Entities;
-using Xunit;
 
-namespace RotaViagem.App.Tests.Services;
+namespace RotaViagem.AppConsole.Tests.Services;
 
 public class RotasInicializadorServiceTests : IntegrationTestBase
 {
@@ -46,3 +46,4 @@ public class RotasInicializadorServiceTests : IntegrationTestBase
         Assert.Equal(new[] { "GRU", "BRC", "SCL", "ORL", "CDG" }, caminho);
     }
 }
+

@@ -6,16 +6,13 @@ using RotaViagem.AppConsole.Services;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-// Configuração dos serviços
 builder.Services.AddApplicationServices();
 
 var host = builder.Build();
 
-// Inicializa as rotas padrão
 var rotasInicializador = host.Services.GetRequiredService<RotasInicializadorService>();
 rotasInicializador.InicializarRotasPadrao();
 
-// Execução do menu
 var menuService = host.Services.GetRequiredService<MenuService>();
 
 while (true)

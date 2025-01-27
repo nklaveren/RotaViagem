@@ -11,6 +11,7 @@ public class Viagem
     public void AdicionarRota(string origem, string destino, decimal valor)
     {
         var rota = new Rota(origem, destino, valor);
+
         _rotas.Add(rota);
     }
 
@@ -19,7 +20,6 @@ public class Viagem
         var visitados = new HashSet<string>();
         var melhorCaminho = new List<string>();
         var melhorCusto = decimal.MaxValue;
-
         EncontrarCaminho(origem.ToUpper(), destino.ToUpper(), [origem.ToUpper()], 0, visitados, ref melhorCaminho, ref melhorCusto);
 
         return (melhorCaminho, melhorCusto);
@@ -50,22 +50,21 @@ public class Viagem
 
         foreach (var rota in rotasDisponiveis)
         {
-            caminhoAtual.Add(rota.Destino);     // Adiciona próximo aeroporto ao caminho
+            caminhoAtual.Add(rota.Destino);
 
-            // Chamada recursiva para continuar a busca
             EncontrarCaminho(
                 rota.Destino,
                 destino,
                 caminhoAtual,
-                custoAtual + rota.Valor,  // Acumula o custo
+                custoAtual + rota.Valor,  // Acumula o custo para melhor caminho
                 visitados,
                 ref melhorCaminho,
                 ref melhorCusto
             );
 
-            caminhoAtual.RemoveAt(caminhoAtual.Count - 1);  // Backtracking - remove último aeroporto
+            caminhoAtual.RemoveAt(caminhoAtual.Count - 1);
         }
 
-        visitados.Remove(atual);  // Backtracking - remove aeroporto dos visitados
+        visitados.Remove(atual);
     }
 }

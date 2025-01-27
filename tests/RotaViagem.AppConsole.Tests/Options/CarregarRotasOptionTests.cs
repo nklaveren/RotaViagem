@@ -75,7 +75,4 @@ public class CarregarRotasOptionTests : IntegrationTestBase
         // Assert
         Assert.Throws<ArgumentException>(() => _carregarRotasOption.Execute());
     }
-
-
-
 }

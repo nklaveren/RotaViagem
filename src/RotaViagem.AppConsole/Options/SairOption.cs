@@ -20,6 +20,5 @@ public class SairOption : IMenuOption
     {
         _console.Clear();
         _console.WriteLine("Saindo do sistema...");
-        Environment.Exit(0);
     }
 }

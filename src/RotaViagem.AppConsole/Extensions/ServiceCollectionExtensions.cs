@@ -15,7 +15,6 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IConsoleService, ConsoleService>();
         services.AddSingleton<RotasInicializadorService>();
 
-        // Registra as opções tanto como interface quanto como implementação concreta
         services.AddSingleton<CarregarRotasOption>();
         services.AddSingleton<ConsultarRotaOption>();
         services.AddSingleton<SairOption>();

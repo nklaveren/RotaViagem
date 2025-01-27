@@ -108,7 +108,6 @@ dotnet run
 
 4. **Padrões Utilizados**:
    - Command Pattern para opções do menu
-   - Repository Pattern para persistência
    - Dependency Injection para acoplamento fraco
 
 5. **Testes**:

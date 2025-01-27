@@ -1,3 +1,5 @@
+using System.Collections.ObjectModel;
+
 using RotaViagem.AppConsole.Interfaces;
 
 namespace RotaViagem.AppConsole.Services;
@@ -5,6 +7,8 @@ namespace RotaViagem.AppConsole.Services;
 public class MenuService
 {
     private readonly Dictionary<string, IMenuOption> _options;
+
+    public ReadOnlyDictionary<string, IMenuOption> Options => new(_options);
     private readonly IConsoleService _console;
 
     public MenuService(Dictionary<string, IMenuOption> options, IConsoleService console)
@@ -30,10 +34,6 @@ public class MenuService
     {
         if (opcao == null || !_options.ContainsKey(opcao))
             throw new ArgumentException("Opção inválida!");
-
-        if (opcao == "3") // Opção de saída
-            return true;
-
         _options[opcao].Execute();
         return false;
     }
