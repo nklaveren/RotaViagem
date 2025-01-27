@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A377E06-3940-448E-BA73-69F6195072A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.Domain", "src\RotaViagem.Domain\RotaViagem.Domain.csproj", "{7EE74835-7F72-4288-8104-191CB4162EBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1B8048B7-E30B-40C6-9ACA-17034246AA24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.Domain.Tests", "tests\RotaViagem.Domain.Tests\RotaViagem.Domain.Tests.csproj", "{87445818-1F03-46E9-87FE-2A5B032C036E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.AppConsole", "src\RotaViagem.AppConsole\RotaViagem.AppConsole.csproj", "{7769C8DB-AFCD-44D9-921A-D1B45F4F704B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.AppConsole.Tests", "tests\RotaViagem.AppConsole.Tests\RotaViagem.AppConsole.Tests.csproj", "{4776304C-8813-470C-9238-F1F633DD3F81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EE74835-7F72-4288-8104-191CB4162EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE74835-7F72-4288-8104-191CB4162EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE74835-7F72-4288-8104-191CB4162EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE74835-7F72-4288-8104-191CB4162EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87445818-1F03-46E9-87FE-2A5B032C036E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87445818-1F03-46E9-87FE-2A5B032C036E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87445818-1F03-46E9-87FE-2A5B032C036E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87445818-1F03-46E9-87FE-2A5B032C036E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7769C8DB-AFCD-44D9-921A-D1B45F4F704B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7769C8DB-AFCD-44D9-921A-D1B45F4F704B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7769C8DB-AFCD-44D9-921A-D1B45F4F704B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7769C8DB-AFCD-44D9-921A-D1B45F4F704B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4776304C-8813-470C-9238-F1F633DD3F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4776304C-8813-470C-9238-F1F633DD3F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4776304C-8813-470C-9238-F1F633DD3F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4776304C-8813-470C-9238-F1F633DD3F81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EE74835-7F72-4288-8104-191CB4162EBF} = {8A377E06-3940-448E-BA73-69F6195072A1}
+		{87445818-1F03-46E9-87FE-2A5B032C036E} = {1B8048B7-E30B-40C6-9ACA-17034246AA24}
+		{7769C8DB-AFCD-44D9-921A-D1B45F4F704B} = {8A377E06-3940-448E-BA73-69F6195072A1}
+		{4776304C-8813-470C-9238-F1F633DD3F81} = {1B8048B7-E30B-40C6-9ACA-17034246AA24}
+	EndGlobalSection
+EndGlobal
